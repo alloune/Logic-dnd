@@ -1,18 +1,25 @@
 package com.logic.logic.model;
 
-
 public class Hero {
 
     //attributs de la classe
     private int id;
-
     private String name ;
     private int hp;
     private String type;
+    private int position;
 
 
     //constructeur
     public Hero() {
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     public Hero(String name, String type){
