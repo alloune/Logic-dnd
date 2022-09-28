@@ -15,7 +15,7 @@ public class DiceController {
 
     String BASE_URL = "http://localhost:8080/characters/";
     @GetMapping(value = "/start-round/{id}")
-    public Hero resolveGame(@PathVariable int id){
+    public Integer resolveGame(@PathVariable int id){
         RestTemplate heroTemplate = new RestTemplate();
         int move = rollTheDice();
 
@@ -23,7 +23,7 @@ public class DiceController {
         heroToMove.setPosition(heroToMove.getPosition()+move);
 
         heroTemplate.put(BASE_URL +id, heroToMove);
-        return heroToMove;
+        return move;
     }
 
     public int rollTheDice() {
