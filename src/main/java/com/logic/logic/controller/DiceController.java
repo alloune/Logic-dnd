@@ -25,6 +25,13 @@ public class DiceController {
 
         heroTemplate.put(BASE_URL + id, heroToMove);
 
+        if(heroToMove.getPosition() >= 64){
+            return new RedirectView("http://localhost:8083/youWin");
+        }
+        if(heroToMove.getHp() <= 0){
+            return new RedirectView("http://localhost:8083/youLose");
+        }
+
         return new RedirectView("http://localhost:8083/playgame/"+id);
 
     }
