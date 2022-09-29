@@ -29,7 +29,7 @@ public class DiceController {
             return new RedirectView("http://localhost:8083/youWin");
         }
         if(heroToMove.getHp() <= 0){
-            return new RedirectView("http://localhost:8083/youLose");
+            return new RedirectView("http://localhost:8083/youLost");
         }
 
         return new RedirectView("http://localhost:8083/playgame/"+id);
